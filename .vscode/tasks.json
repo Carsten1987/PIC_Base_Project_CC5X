@@ -1,0 +1,53 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build",
+            "type": "shell",
+            "command": "D:\\Program Files\\bknd\\CC5X\\CC5X.EXE",
+            "args": [
+                "-a",
+                "-dc",
+                "-OOutput",
+                "Programm.c"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Clean",
+            "type": "shell",
+            "command": "Remove-Item",
+            "args": [
+                "-Recurse",
+                "Output\\*"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Program",
+            "type": "process",
+            "command": "D:\\Program Files\\Microchip\\MPLABX\\v6.00\\mplab_platform\\mplab_ipe\\ipecmd.exe",
+            "args": [
+                "-TPPK4",
+                "-P16F628",
+                "-M",
+                "-OL",
+                "-FOutput/Program.hex"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
